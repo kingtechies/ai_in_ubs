@@ -252,6 +252,8 @@ static void self_attention_forward(
     int layer,
     int position
 ) {
+    // NUM_KV_HEADS defined in model config (typically 8 for GQA, same as NUM_HEADS for MHA)
+    // KV_DIM = NUM_KV_HEADS * HEAD_DIM
     fp16_t q[HIDDEN_DIM], k[HEAD_DIM * NUM_KV_HEADS], v[HEAD_DIM * NUM_KV_HEADS];
     fp16_t attn_out[HIDDEN_DIM];
     

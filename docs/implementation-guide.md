@@ -404,7 +404,8 @@ class USBAIAccelerator:
 │                    Phase 3: ASIC Development                     │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
-│  Timeline:                                                      │
+│  Timeline (Total: ~18 months from RTL freeze to tested silicon) │
+│  ─────────────────────────────────────────────────────────────  │
 │  Month 1-3:  RTL freeze and verification                       │
 │  Month 4-6:  Synthesis and place & route                       │
 │  Month 7-8:  DRC/LVS and sign-off                              │

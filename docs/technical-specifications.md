@@ -200,13 +200,20 @@ For achieving 20,000 tokens/second:
 
 ```python
 # Recommended Model Configuration
+# 
+# Quantization Methods:
+# - GPTQ: Post-Training Quantization via Gradient-based optimization
+#   (https://arxiv.org/abs/2210.17323) - accurate, widely supported
+# - AWQ: Activation-aware Weight Quantization
+#   (https://arxiv.org/abs/2306.00978) - better quality, activation-aware
+
 model_config = {
     "architecture": "Transformer (Decoder-only)",
     "parameters": "1-3 Billion",
     "quantization": {
-        "weights": "INT4 (GPTQ/AWQ)",
-        "activations": "INT8/FP16",
-        "kv_cache": "INT8"
+        "weights": "INT4 (GPTQ/AWQ)",  # 4-bit integer weights
+        "activations": "INT8/FP16",     # 8-bit or 16-bit activations
+        "kv_cache": "INT8"              # 8-bit key-value cache
     },
     "attention": {
         "type": "Grouped Query Attention (GQA)",
